@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <header>
+            <divclass="header">
+            <h1 style="text-align-last: center;color: navy;text-shadow: orange;">APLIKASI BOOKSHELF </h1>
+            <p class="heading-style-small-underline" >Menata Buku Menata Masa Depan</p>
+            <img src="Asset/header.png" alt="header"/>
+            </div>
+        </header>
+ 
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-left" id="navbarSupportedContent">
+                    <form class="d-flex">
+                        <input class="form-control me-2" id="inputsearch" onkeyup="search()" type="text"
+                            placeholder="Search Buku">
+                    </form>
+                </div>
+            </div>
+        </nav>
+    
+    
+
+     <div class="container" id="filter">
+        <div class="row">
+            <div class="column" style="background-color:#aaa;">
+        <section class="input-section card mt-4">
+            <h2 style="color: #1a75ff;">Masukkan Buku Baru</h2>
+            <p>Silahkan tambahkan buku baru yang Anda sukai di sini.</p>
+            <form id="inputBuku">
+                <ul class="listgroup">
+                    <li class="listgroupitem">
+                        <div class="mb-3">
+                            <label for="inputBukuTitle" class="form-label">Judul Buku</label>
+                            <input type="text" class="form-control" id="inputBukuTitle" required>
+                        </div>
+                    </li>
+                    <li class="listgroupitem">
+                        <div class="mb-3">
+                            <label for="inputBukuAuthor" class="form-label">Penulis</label>
+                            <input type="text" class="form-control" id="inputBukuAuthor" required>
+                        </div>
+                    </li>
+                    <li class="listgroupitem">
+                        <div class="mb-3">
+                            <label for="inputBukuYear" class="form-label">Tahun</label>
+                            <input type="text" class="form-control" id="inputBukuYear" required>
+                        </div>
+                    </li>
+                    <li class="listgroupitem">
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="selesai">
+                            <label class="form-check-label" for="selesai">Selesai dibaca</label>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button class="btn" type="submit">Submit</button>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </div>
+
+    <div class="column" style="background-color:#bbb;">
+        <section class="buku_shelf card mt-4">
+            <h2 style="color: #1a75ff;">Belum selesai dibaca</h2>
+            <p>Rak ini berisi kumpulan buku yang masih dibaca/belum selesai.</p>
+            <div id="incompleteBukushelfList" class="buku_list">
+
+            </div>
+        </section>
+    </div>
+
+    <div class="column" style="background-color:#ccc;">
+        <section class="buku_shelf card mt-4">
+            <h2 style="color: #1a75ff;">Selesai dibaca</h2>
+            <p>Rak ini berisi kumpulan buku yang sudah selesai dibaca.</p>
+            <div id="completeBukushelfList" class="buku_list">
+            </div>
+        </section>
+    </div>
+
+    </div>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content mt-6">
+                <div class="modal-body mt-2">
+                    <span class="close">&times;</span>
+                    <h2>Yakin ingin menghapus ini?</h2>
+                    <button class="btn btn-outline-success mt-4 me-4" id="nodelete">Cancel</button>
+                    <button class="btn btn-outline-danger mt-4 ms-4" id="vdelete">Hapus</button>
+                </div>
+            </div>
+
+        </div>
+
+
+    <script src="script.js"></script>
+
+    <footer>
+
+        <style>
+            #special {
+                background-color: #1a75ff;
+                color: rgb(225, 240, 13);;
+                padding: 10px;
+                font-size: large;
+            }
+         </style>
+         <div id="special">
+        <p style="text-align:center">Copyright 2021 AplikasiBookshelf.com</p>
+        </footer>
+</body>
+
+</html>
